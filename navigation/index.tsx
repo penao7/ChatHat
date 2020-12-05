@@ -1,14 +1,14 @@
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
-import { ColorSchemeName, StyleSheet } from 'react-native';
+import { ColorSchemeName, StyleSheet, useColorScheme } from 'react-native';
 import { View } from 'react-native';
 import Colors from '../constants/Colors';
 import { Octicons, MaterialCommunityIcons } from '@expo/vector-icons';
 
 import NotFoundScreen from '../screens/NotFoundScreen';
 import { RootStackParamList } from '../types';
-import BottomTabNavigator from './BottomTabNavigator';
+import MainTabNavigator from './MainTabNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
 
 // If you are not familiar with React Navigation, we recommend going through the
@@ -28,11 +28,16 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
 const Stack = createStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
+
+const testi = useColorScheme();
+
   return (
     <Stack.Navigator
       screenOptions={{
         headerStyle: {
-          backgroundColor: Colors.light.tint
+          backgroundColor: Colors.light.tint,
+          shadowOpacity: 0,
+          elevation: 0
         },
         headerTintColor: Colors.light.background,
         headerTitleAlign: 'left',
@@ -43,7 +48,7 @@ function RootNavigator() {
     >
       <Stack.Screen
         name="Root"
-        component={BottomTabNavigator}
+        component={MainTabNavigator}
         options={{
           title: 'ChatHat',
           headerRight: () => (

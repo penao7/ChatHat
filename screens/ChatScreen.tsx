@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
+import ChatListItem from '../components/ChatListItem';
 
-import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 
-export default function TabOneScreen() {
+import chatRooms from '../data/ChatRooms';
+
+export default function ChatScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/TabOneScreen.js" />
+      <ChatListItem chatRoom={chatRooms[0]} />
     </View>
   );
 }

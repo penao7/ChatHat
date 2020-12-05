@@ -1,7 +1,10 @@
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
-import { ColorSchemeName } from 'react-native';
+import { ColorSchemeName, StyleSheet } from 'react-native';
+import { View } from 'react-native';
+import Colors from '../constants/Colors';
+import { Octicons, MaterialCommunityIcons } from '@expo/vector-icons';
 
 import NotFoundScreen from '../screens/NotFoundScreen';
 import { RootStackParamList } from '../types';
@@ -26,9 +29,41 @@ const Stack = createStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="Root" component={BottomTabNavigator} />
+    <Stack.Navigator
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: Colors.light.tint
+        },
+        headerTintColor: Colors.light.background,
+        headerTitleAlign: 'left',
+        headerTitleStyle: {
+          fontWeight: 'bold'
+        }
+      }}
+    >
+      <Stack.Screen
+        name="Root"
+        component={BottomTabNavigator}
+        options={{
+          title: 'ChatHat',
+          headerRight: () => (
+            <View style={styles.headerRightStyle}>
+              <Octicons name="search" size={24} color='black' />
+              <MaterialCommunityIcons name="dots-vertical" size={24} />
+            </View>
+          )
+        }}
+      />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
-    </Stack.Navigator>
+    </Stack.Navigator >
   );
 }
+
+const styles = StyleSheet.create({
+  headerRightStyle: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: 60,
+    marginRight: 10
+  }
+})

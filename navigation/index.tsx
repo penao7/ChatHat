@@ -1,7 +1,7 @@
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator, HeaderBackButton } from '@react-navigation/stack';
 import * as React from 'react';
-import { ColorSchemeName, StyleSheet, useColorScheme } from 'react-native';
+import { ColorSchemeName, StyleSheet, Image, Text } from 'react-native';
 import { View } from 'react-native';
 import Colors from '../constants/Colors';
 import { Octicons, MaterialCommunityIcons } from '@expo/vector-icons';
@@ -10,6 +10,8 @@ import NotFoundScreen from '../screens/NotFoundScreen';
 import { RootStackParamList } from '../types';
 import MainTabNavigator from './MainTabNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
+import ChatRoomScreen from '../screens/ChatRoomScreen';
+import HeaderComponent from './Header';
 
 // If you are not familiar with React Navigation, we recommend going through the
 // "Fundamentals" guide: https://reactnavigation.org/docs/getting-started
@@ -28,8 +30,6 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
 const Stack = createStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
-
-const testi = useColorScheme();
 
   return (
     <Stack.Navigator
@@ -59,6 +59,22 @@ const testi = useColorScheme();
           )
         }}
       />
+      <Stack.Screen
+        name="ChatRoom"
+        component={ChatRoomScreen}
+        options={({ route }) => ({
+          headerTitle:
+            () => {
+              return (
+                <HeaderComponent params={route.params} />
+              )
+            },
+          headerTitleAlign: 'left',
+          headerTitleContainerStyle: {
+            left: 45
+          }
+        })}
+      />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
     </Stack.Navigator >
   );
@@ -70,5 +86,5 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     width: 60,
     marginRight: 10
-  }
+  },
 })

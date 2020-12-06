@@ -2,7 +2,7 @@ import * as React from 'react';
 import { StyleSheet, FlatList } from 'react-native';
 import ChatListItem from '../components/ChatListItem';
 
-import { Text, View } from '../components/Themed';
+import { View } from '../components/Themed';
 
 import chatRooms from '../data/ChatRooms';
 

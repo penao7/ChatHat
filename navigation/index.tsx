@@ -66,7 +66,11 @@ function RootNavigator() {
           headerTitle:
             () => {
               return (
-                <HeaderComponent params={route.params} />
+                <HeaderComponent
+                  name={route.params.name}
+                  id={route.params.id}
+                  imageUri={route.params.imageUri}
+                />
               )
             },
           headerTitleAlign: 'left',

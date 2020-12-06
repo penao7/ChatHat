@@ -4,7 +4,7 @@ import { Image } from 'react-native';
 import styles from './styles';
 
 type ImageUri = {
-  imageUri: string
+  imageUri?: string
 };
 
 const HeaderAvatar = ({ imageUri }: ImageUri) => {

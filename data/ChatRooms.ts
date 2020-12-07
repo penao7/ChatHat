@@ -13,6 +13,11 @@ export default [{
     id: 'm1',
     content: 'Actually I am! It will be a chat app',
     createdAt: '2020-12-01T14:48:00.000Z',
+    user: {
+      id: 'u1',
+      name: 'Pentti',
+      imageUri: 'https://scontent.fkiv3-1.fna.fbcdn.net/v/t31.0-1/s200x200/22256588_1932617800312085_5686197942193420542_o.jpg?_nc_cat=110&_nc_sid=7206a8&_nc_eui2=AeF3UwtnAs3QLEJRnLSp4-hQxlokCBJZ6JPGWiQIElnok9HafHyjqv9D4bW9zeNFfNJlg5jLsvbewM7j5OD-OFy-&_nc_ohc=IxycgYSpqQEAX8EcTqI&_nc_ht=scontent.fkiv3-1.fna&tp=7&oh=640a83293bb75378958d22b633302f1b&oe=5F9F4BB7',
+    }
   }
 }, {
   id: '2',
@@ -29,6 +34,11 @@ export default [{
     id: 'm2',
     content: 'How are you doing?',
     createdAt: '2020-11-30T15:40:00.000Z',
+    user: {
+      id: 'u1',
+      name: 'Pentti',
+      imageUri: 'https://scontent.fkiv3-1.fna.fbcdn.net/v/t31.0-1/s200x200/22256588_1932617800312085_5686197942193420542_o.jpg?_nc_cat=110&_nc_sid=7206a8&_nc_eui2=AeF3UwtnAs3QLEJRnLSp4-hQxlokCBJZ6JPGWiQIElnok9HafHyjqv9D4bW9zeNFfNJlg5jLsvbewM7j5OD-OFy-&_nc_ohc=IxycgYSpqQEAX8EcTqI&_nc_ht=scontent.fkiv3-1.fna&tp=7&oh=640a83293bb75378958d22b633302f1b&oe=5F9F4BB7',
+    }
   }
 }, {
   id: '3',
@@ -45,6 +55,11 @@ export default [{
     id: 'm3',
     content: 'Can I borrow you car next sunday? I need it to deliver some stuff',
     createdAt: '2020-11-30T14:48:00.000Z',
+    user: {
+      id: 'u1',
+      name: 'Pentti',
+      imageUri: 'https://scontent.fkiv3-1.fna.fbcdn.net/v/t31.0-1/s200x200/22256588_1932617800312085_5686197942193420542_o.jpg?_nc_cat=110&_nc_sid=7206a8&_nc_eui2=AeF3UwtnAs3QLEJRnLSp4-hQxlokCBJZ6JPGWiQIElnok9HafHyjqv9D4bW9zeNFfNJlg5jLsvbewM7j5OD-OFy-&_nc_ohc=IxycgYSpqQEAX8EcTqI&_nc_ht=scontent.fkiv3-1.fna&tp=7&oh=640a83293bb75378958d22b633302f1b&oe=5F9F4BB7',
+    }
   }
 }, {
   id: '4',
@@ -61,6 +76,11 @@ export default [{
     id: 'm4',
     content: 'What are you doing tonight?',
     createdAt: '2020-11-29T14:48:00.000Z',
+    user: {
+      id: 'u1',
+      name: 'Pentti',
+      imageUri: 'https://scontent.fkiv3-1.fna.fbcdn.net/v/t31.0-1/s200x200/22256588_1932617800312085_5686197942193420542_o.jpg?_nc_cat=110&_nc_sid=7206a8&_nc_eui2=AeF3UwtnAs3QLEJRnLSp4-hQxlokCBJZ6JPGWiQIElnok9HafHyjqv9D4bW9zeNFfNJlg5jLsvbewM7j5OD-OFy-&_nc_ohc=IxycgYSpqQEAX8EcTqI&_nc_ht=scontent.fkiv3-1.fna&tp=7&oh=640a83293bb75378958d22b633302f1b&oe=5F9F4BB7',
+    }
   }
 }, {
   id: '5',
@@ -77,6 +97,11 @@ export default [{
     id: 'm5',
     content: 'I would be happy to',
     createdAt: '2020-11-28T14:48:00.000Z',
+    user: {
+      id: 'u1',
+      name: 'Pentti',
+      imageUri: 'https://scontent.fkiv3-1.fna.fbcdn.net/v/t31.0-1/s200x200/22256588_1932617800312085_5686197942193420542_o.jpg?_nc_cat=110&_nc_sid=7206a8&_nc_eui2=AeF3UwtnAs3QLEJRnLSp4-hQxlokCBJZ6JPGWiQIElnok9HafHyjqv9D4bW9zeNFfNJlg5jLsvbewM7j5OD-OFy-&_nc_ohc=IxycgYSpqQEAX8EcTqI&_nc_ht=scontent.fkiv3-1.fna&tp=7&oh=640a83293bb75378958d22b633302f1b&oe=5F9F4BB7',
+    }
   }
 }, {
   id: '6',
@@ -93,6 +118,11 @@ export default [{
     id: 'm6',
     content: 'Good to know!',
     createdAt: '2020-10-02T15:40:00.000Z',
+    user: {
+      id: 'u1',
+      name: 'Pentti',
+      imageUri: 'https://scontent.fkiv3-1.fna.fbcdn.net/v/t31.0-1/s200x200/22256588_1932617800312085_5686197942193420542_o.jpg?_nc_cat=110&_nc_sid=7206a8&_nc_eui2=AeF3UwtnAs3QLEJRnLSp4-hQxlokCBJZ6JPGWiQIElnok9HafHyjqv9D4bW9zeNFfNJlg5jLsvbewM7j5OD-OFy-&_nc_ohc=IxycgYSpqQEAX8EcTqI&_nc_ht=scontent.fkiv3-1.fna&tp=7&oh=640a83293bb75378958d22b633302f1b&oe=5F9F4BB7',
+    }
   }
 }, {
   id: '7',
@@ -109,6 +139,11 @@ export default [{
     id: 'm7',
     content: 'What are you up to nowadays?',
     createdAt: '2020-10-02T15:40:00.000Z',
+    user: {
+      id: 'u1',
+      name: 'Pentti',
+      imageUri: 'https://scontent.fkiv3-1.fna.fbcdn.net/v/t31.0-1/s200x200/22256588_1932617800312085_5686197942193420542_o.jpg?_nc_cat=110&_nc_sid=7206a8&_nc_eui2=AeF3UwtnAs3QLEJRnLSp4-hQxlokCBJZ6JPGWiQIElnok9HafHyjqv9D4bW9zeNFfNJlg5jLsvbewM7j5OD-OFy-&_nc_ohc=IxycgYSpqQEAX8EcTqI&_nc_ht=scontent.fkiv3-1.fna&tp=7&oh=640a83293bb75378958d22b633302f1b&oe=5F9F4BB7',
+    }
   }
 }, {
   id: '8',
@@ -125,6 +160,11 @@ export default [{
     id: 'm8',
     content: 'Did you find anything to eat?',
     createdAt: '2020-09-27T15:40:00.000Z',
+    user: {
+      id: 'u1',
+      name: 'Pentti',
+      imageUri: 'https://scontent.fkiv3-1.fna.fbcdn.net/v/t31.0-1/s200x200/22256588_1932617800312085_5686197942193420542_o.jpg?_nc_cat=110&_nc_sid=7206a8&_nc_eui2=AeF3UwtnAs3QLEJRnLSp4-hQxlokCBJZ6JPGWiQIElnok9HafHyjqv9D4bW9zeNFfNJlg5jLsvbewM7j5OD-OFy-&_nc_ohc=IxycgYSpqQEAX8EcTqI&_nc_ht=scontent.fkiv3-1.fna&tp=7&oh=640a83293bb75378958d22b633302f1b&oe=5F9F4BB7',
+    }
   }
 }, {
   id: '9',
@@ -141,5 +181,10 @@ export default [{
     id: 'm9',
     content: 'Meet me at the same place',
     createdAt: '2020-09-25T15:40:00.000Z',
+    user: {
+      id: 'u1',
+      name: 'Pentti',
+      imageUri: 'https://scontent.fkiv3-1.fna.fbcdn.net/v/t31.0-1/s200x200/22256588_1932617800312085_5686197942193420542_o.jpg?_nc_cat=110&_nc_sid=7206a8&_nc_eui2=AeF3UwtnAs3QLEJRnLSp4-hQxlokCBJZ6JPGWiQIElnok9HafHyjqv9D4bW9zeNFfNJlg5jLsvbewM7j5OD-OFy-&_nc_ohc=IxycgYSpqQEAX8EcTqI&_nc_ht=scontent.fkiv3-1.fna&tp=7&oh=640a83293bb75378958d22b633302f1b&oe=5F9F4BB7',
+    }
   },
 }]

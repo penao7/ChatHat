@@ -5,6 +5,7 @@ export type RootStackParamList = {
     imageUri: string,
     id: string
   },
+  Contacts: undefined,
   NotFound: undefined;
 };
 
@@ -26,6 +27,7 @@ export type User = {
   id: string;
   name: string,
   imageUri?: string
+  status?: string
 };
 
 export type Message = {

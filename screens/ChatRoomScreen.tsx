@@ -5,7 +5,10 @@ import { useRoute } from '@react-navigation/native';
 import ChatMessage from '../components/ChatMessage';
 
 import chatRoomData from '../data/Chats';
-import background from '../assets/images/background.jpg';
+
+// @ts-ignore
+import background from '../assets/images/background.jpg'
+
 import InputBox from '../components/InputBox';
 
 const ChatRoomScreen = () => {

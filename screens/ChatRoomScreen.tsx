@@ -6,6 +6,7 @@ import ChatMessage from '../components/ChatMessage';
 
 import chatRoomData from '../data/Chats';
 import background from '../assets/images/background.jpg';
+import InputBox from '../components/InputBox';
 
 const ChatRoomScreen = () => {
 
@@ -19,6 +20,7 @@ const ChatRoomScreen = () => {
         keyExtractor={item => item.id}
         inverted
       />
+      <InputBox />
     </ImageBackground>
 
   )

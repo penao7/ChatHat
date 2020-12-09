@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "chathat5f15bf85_identitypool_5f15bf85",
+    "identityPoolName": "chathataa8529f9_identitypool_aa8529f9",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "chatha5f15bf85",
-    "userPoolName": "chathat5f15bf85_userpool_5f15bf85",
+    "resourceNameTruncated": "chathaaa8529f9",
+    "userPoolName": "chathataa8529f9_userpool_aa8529f9",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -28,10 +28,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "chatha5f15bf85_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "chathaaa8529f9_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "5f15bf85",
-    "resourceName": "chathat5f15bf85",
+    "sharedId": "aa8529f9",
+    "resourceName": "chathataa8529f9",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -45,12 +45,7 @@
             "Arn"
         ]
     },
-    "useDefault": "defaultSocial",
-    "hostedUI": true,
-    "hostedUIDomainName": "",
-    "authProvidersUserPool": [],
-    "hostedUIProviderMeta": "[]",
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"exp://192.168.1.135:19000/\"],\"LogoutURLs\":[\"exp://192.168.1.135:19000/\"]}",
+    "useDefault": "default",
     "userPoolGroupList": [],
     "serviceName": "Cognito",
     "dependsOn": []

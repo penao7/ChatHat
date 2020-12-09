@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-chathat-dev-160751-authRole",
+      "UnauthRoleArn": "arn:aws:iam::536774491173:role/amplify-chathat-dev-160751-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::536774491173:role/amplify-chathat-dev-160751-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-chathat-dev-160751-deployment",
+      "UnauthRoleName": "amplify-chathat-dev-160751-unauthRole",
+      "StackName": "amplify-chathat-dev-160751",
+      "StackId": "arn:aws:cloudformation:eu-central-1:536774491173:stack/amplify-chathat-dev-160751/c4193ef0-395e-11eb-a2c5-0207ca607726",
+      "AmplifyAppId": "d20spaqu2xi13r"
+    }
+  }
+}

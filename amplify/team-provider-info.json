@@ -10,6 +10,11 @@
       "StackName": "amplify-chathat-dev-160751",
       "StackId": "arn:aws:cloudformation:eu-central-1:536774491173:stack/amplify-chathat-dev-160751/c4193ef0-395e-11eb-a2c5-0207ca607726",
       "AmplifyAppId": "d20spaqu2xi13r"
+    },
+    "categories": {
+      "auth": {
+        "chathat5f15bf85": {}
+      }
     }
   }
 }

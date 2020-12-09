@@ -8,9 +8,15 @@ import Navigation from './navigation';
 
 import Amplify from 'aws-amplify'
 import config from './aws-exports'
-Amplify.configure(config)
+Amplify.configure({
+  ...config,
+  Analytics: {
+    disabled: true
+  }
+});
+import { withAuthenticator } from 'aws-amplify-react-native';
 
-export default function App() {
+function App() {
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
 
@@ -25,3 +31,5 @@ export default function App() {
     );
   }
 }
+
+export default withAuthenticator(App);

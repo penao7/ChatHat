@@ -25,7 +25,7 @@ const ContactListItem = (props: ChatListItemProps) => {
     <TouchableWithoutFeedback onPress={() => onClick()}>
       <View style={styles.container}>
         <View style={styles.leftContainer}>
-          <Image source={{ uri: user.imageUri }} style={styles.avatar} />
+          <Image source={{ uri: user.imageUrl }} style={styles.avatar} />
           <View style={styles.midContainer}>
             <Text style={styles.username}>{user.name}</Text>
             <Text numberOfLines={1} style={styles.status}>{user.status}</Text>

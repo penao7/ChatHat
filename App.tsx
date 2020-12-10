@@ -23,12 +23,18 @@ Amplify.configure({
 });
 
 const randomImages = [
-  'https://i.picsum.photos/id/104/3840/2160.jpg?hmac=Rv0qxBiYb65Htow4mdeDlyT5kLM23Z2cDlN53YYldZU',
-  'https://i.picsum.photos/id/1027/2848/4272.jpg?hmac=EAR-f6uEqI1iZJjB6-NzoZTnmaX0oI0th3z8Y78UpKM',
-  'https://i.picsum.photos/id/1035/5854/3903.jpg?hmac=DV0AS2MyjW6ddofvSIU9TVjj1kewfh7J3WEOvflY8TM',
-  'https://i.picsum.photos/id/1074/5472/3648.jpg?hmac=w-Fbv9bl0KpEUgZugbsiGk3Y2-LGAuiLZOYsRk0zo4A',
-  'https://i.picsum.photos/id/1084/4579/3271.jpg?hmac=YblMazviSugJVfZsFPaFI_Vp6lBeQin62qpm8rxHruo',
-  'https://i.picsum.photos/id/175/2896/1944.jpg?hmac=djMSfAvFgWLJ2J3cBulHUAb4yvsQk0d4m4xBJFKzZrs'
+  'https://i.ibb.co/Tb7n4Hc/avataaars-2.png',
+  'https://i.ibb.co/T8LDkQk/avataaars-3.png',
+  'https://i.ibb.co/CVqqtbP/avataaars-4.png',
+  'https://i.ibb.co/qCm7886/avataaars-5.png',
+  'https://i.ibb.co/mtfkBLM/avataaars-6.png',
+  'https://i.ibb.co/CW6bV7H/avataaars-7.png',
+  'https://i.ibb.co/K5y05C3/avataaars-8.png',
+  'https://i.ibb.co/kqBhTQS/avataaars-9.png',
+  'https://i.ibb.co/hYzPw3w/avataaars-10.png',
+  'https://i.ibb.co/z4cG0LN/avataaars-11.png',
+  'https://i.ibb.co/7bLrPsJ/avataaars-1.png',
+  'https://i.ibb.co/hLQMsLF/avataaars.png'
 ];
 
 function App() {
@@ -37,9 +43,8 @@ function App() {
 
 
   useEffect(() => {
-    const fetchUser = async () => {
-      // get Authenticated user from Auth
 
+    const fetchUser = async () => {
       const userInfo = await Auth.currentAuthenticatedUser({ bypassCache: true });
 
       const getRandomImage = () => {
@@ -70,8 +75,8 @@ function App() {
           )
         );
       }
-
     };
+
     fetchUser();
   }, []);
 

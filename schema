@@ -7,15 +7,14 @@ type User @model {
 }
 
 type ChatRoomUser
-@model
 @key(name: "byUser", fields: ["userId", "chatRoomId"])
 @key(name: "byChatRoom", fields: ["chatRoomId", "userId"])
-{
+@model {
   id: ID!
-  userId: ID!
-  chatRoomId: ID!
+  userId: ID!,
+  chatRoomId: ID!,
   user: User @connection(fields: ["userId"])
-  chatRoom: ChatRoom @connection(fields: ["chatRoomId"])
+  chatRoom: ChatRoomUser @connection(fields: ["chatRoomId"])
 }
 
 type ChatRoom @model {

@@ -1,6 +1,6 @@
 {
   "auth": {
-    "chathataa8529f9": {
+    "chathat7bf7dfd9": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
@@ -16,7 +16,7 @@
           "defaultAuthentication": {
             "authenticationType": "AMAZON_COGNITO_USER_POOLS",
             "userPoolConfig": {
-              "userPoolId": "authchathataa8529f9"
+              "userPoolId": "authchathat7bf7dfd9"
             }
           },
           "additionalAuthenticationProviders": []

@@ -42,26 +42,19 @@ function App() {
 
       const userInfo = await Auth.currentAuthenticatedUser({ bypassCache: true });
 
-      console.log('SUB', userInfo.attributes.sub);
-
       const getRandomImage = () => {
         return randomImages[Math.floor(Math.random() * randomImages.length)]
       };
 
       if (userInfo) {
-
         const userData = await API.graphql(
           graphqlOperation(getUser, { id: userInfo.attributes.sub })
         );
-
-        console.log('userData', userData);
 
         if (userData.data.getUser) {
           console.log('User is already registered');
           return;
         };
-
-        console.log(getRandomImage());
 
         const newUser = {
           id: userInfo.attributes.sub,
@@ -76,11 +69,6 @@ function App() {
             { input: newUser }
           )
         );
-
-
-        // get the user from Backend with the user SUB from Auth
-
-        // If there is no user with the id, create one
       }
 
     };

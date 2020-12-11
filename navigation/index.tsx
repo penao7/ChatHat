@@ -70,7 +70,7 @@ function RootNavigator() {
                 <HeaderComponent
                   name={route.params.name}
                   id={route.params.id}
-                  imageUrl={route.params.imageUri}
+                  imageUrl={route.params.imageUrl}
                 />
               )
             },

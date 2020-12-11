@@ -1,7 +1,7 @@
 import React from 'react';
 import { FlatList, ImageBackground } from 'react-native';
 
-import { useRoute } from '@react-navigation/native';
+import { RouteProp, useRoute } from '@react-navigation/native';
 import ChatMessage from '../components/ChatMessage';
 
 import chatRoomData from '../data/Chats';
@@ -10,10 +10,11 @@ import chatRoomData from '../data/Chats';
 import background from '../assets/images/background.jpg'
 
 import InputBox from '../components/InputBox';
+import { RootStackParamList } from '../types';
 
 const ChatRoomScreen = () => {
 
-  const route = useRoute();
+  const route = useRoute<RouteProp<RootStackParamList, 'ChatRoom'>>();
 
   return (
     <ImageBackground style={{ width: '100%', height: '100%' }} source={background}>
@@ -23,7 +24,7 @@ const ChatRoomScreen = () => {
         keyExtractor={item => item.id}
         inverted
       />
-      <InputBox />
+      <InputBox chatRoomId={route.params.chatRoomId} />
     </ImageBackground>
 
   )

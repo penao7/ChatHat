@@ -7,11 +7,11 @@ import HeaderAvatar from './HeaderAvatar';
 
 const HeaderComponent = (props: User) => {
 
-  const { name, imageUri } = props;
+  const { name, imageUrl } = props;
 
   return (
     <View style={{ flexDirection: 'row' }}>
-      <HeaderAvatar imageUri={imageUri} />
+      <HeaderAvatar imageUrl={imageUrl} />
       <View style={{ flexDirection: 'column' }}>
         <Text style={styles.headerUser}>{name}</Text>
         <Text style={styles.time}>22 hours ago</Text>

@@ -18,22 +18,22 @@ const ChatListItem = (props: ChatListItem) => {
   const users = chatRoom.chatRoomUsers.items;
 
   useEffect(() => {
-    const filterRightUser = async () => {
+    const getOtherUser = async () => {
       const authenticatedUser = await Auth.currentAuthenticatedUser();
       const user = users.filter(item => item.user.id !== authenticatedUser.attributes.sub)[0].user;
       setUser(user);
     };
 
-    filterRightUser();
+    getOtherUser();
   }, [])
 
   const navigation = useNavigation();
 
   const onClick = () => {
     navigation.navigate('ChatRoom', {
-      imageUri: user.imageUrl,
+      imageUrl: user.imageUrl,
       name: user.name,
-      id: user.id
+      chatRoomId: chatRoom.id
     });
   };
 

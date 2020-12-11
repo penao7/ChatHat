@@ -2,8 +2,8 @@ export type RootStackParamList = {
   Root: undefined;
   ChatRoom: {
     name: string,
-    imageUri: string,
-    id: string
+    imageUrl: string,
+    chatRoomId: string,
   },
   Contacts: undefined,
   NotFound: undefined;

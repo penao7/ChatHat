@@ -37,8 +37,6 @@ export default function ChatScreen() {
 
   }, []);
 
-  console.log('chatrooms', chatRooms);
-
   return (
     <View style={styles.container}>
       <FlatList

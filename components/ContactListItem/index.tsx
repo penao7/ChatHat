@@ -31,15 +31,11 @@ const ContactListItem = (props: ChatListItemProps) => {
 
       const chatRoomList = currentUser.data.getUser.chatRoomUser.items;
 
-      console.log('chatRoomList', chatRoomList);
-      console.log(user.id);
-
       const result = await chatRoomList.filter(item =>
         item.chatRoom.chatRoomUsers.items.some(item => item.user.id === user.id)
       )[0];
 
       return result;
-
     };
 
     try {
@@ -91,11 +87,12 @@ const ContactListItem = (props: ChatListItemProps) => {
         console.log('chatroom found');
       }
 
+      console.log(user.imageUrl);
+
       navigation.navigate('ChatRoom', {
         chatRoomId: chatRoomId,
-        imageUri: user.imageUrl,
+        imageUrl: user.imageUrl,
         name: user.name,
-        id: user.id
       })
 
     } catch (err) {

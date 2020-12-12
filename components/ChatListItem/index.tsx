@@ -13,6 +13,8 @@ export type ChatListItem = {
 const ChatListItem = (props: ChatListItem) => {
   const { chatRoom } = props;
 
+  console.log(chatRoom);
+
   const [user, setUser] = useState({} as User);
 
   const users = chatRoom.chatRoomUsers.items;
@@ -44,7 +46,11 @@ const ChatListItem = (props: ChatListItem) => {
           <Image source={{ uri: user.imageUrl }} style={styles.avatar} />
           <View style={styles.midContainer}>
             <Text style={styles.username}>{user.name}</Text>
-            <Text numberOfLines={1} style={styles.lastMessage}>{chatRoom.lastMessage ? chatRoom.lastMessage.content : ''}</Text>
+            <Text numberOfLines={1} style={styles.lastMessage}>
+              {chatRoom.lastMessage
+                ? `${chatRoom.lastMessage.user.name}: ${chatRoom.lastMessage.content}`
+                : ''}
+            </Text>
           </View>
         </View>
         <Text style={styles.time}>

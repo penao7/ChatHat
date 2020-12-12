@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, FlatList, Text } from 'react-native';
+import { StyleSheet, FlatList } from 'react-native';
 import ChatListItem from '../components/ChatListItem';
 import NewMessageButton from './../components/NewMessageButton/';
 import { API, graphqlOperation, Auth } from 'aws-amplify';
-
 import { View } from '../components/Themed';
-
 import { getUser } from './queries';
 
 export default function ChatScreen() {

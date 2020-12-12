@@ -11,6 +11,7 @@ import InputBox from '../components/InputBox';
 import { RootStackParamList, Message } from '../types';
 import { API, Auth, graphqlOperation } from 'aws-amplify';
 import { messagesByChatRoom } from './../graphql/queries';
+import { onCreateMessage } from '../graphql/subscriptions';
 
 export type GetMessagesQuery = {
   data: {
@@ -26,19 +27,20 @@ const ChatRoomScreen = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [myId, setMyId] = useState('');
 
-  useEffect(() => {
-    const fetchMessages = async () => {
-      const messageData = await API.graphql(
-        graphqlOperation(
-          messagesByChatRoom, {
-          chatRoomId: route.params.chatRoomId,
-          sortDirection: "DESC"
-        }
-        )
-      ) as GetMessagesQuery;
-      setMessages(messageData.data.messagesByChatRoom.items);
-    };
+  const fetchMessages = async () => {
+    const messageData = await API.graphql(
+      graphqlOperation(
+        messagesByChatRoom, {
+        chatRoomId: route.params.chatRoomId,
+        sortDirection: "DESC"
+      }
+      )
+    ) as GetMessagesQuery;
+    setMessages(messageData.data.messagesByChatRoom.items);
+  };
 
+  useEffect(() => {
+    messages.map(item => console.log(item.content));
     fetchMessages();
   }, []);
 
@@ -50,6 +52,39 @@ const ChatRoomScreen = () => {
     };
     fetchUser()
   }, [])
+
+  useEffect(() => {
+    const subscription = API.graphql(
+      graphqlOperation(
+        onCreateMessage
+      )
+    ).subscribe({
+      next: (data) => {
+
+        if(!data) {
+          console.log('invalid data');
+        }
+
+        console.log('data', data.value.data);
+
+        const newMessage = data.value.data.onCreateMessage;
+
+        console.log('newMessage', newMessage);
+
+        if (newMessage.chatRoomId !== route.params.chatRoomId) {
+          console.log('another room');
+          return;
+        }
+
+        fetchMessages();
+
+        setMessages([newMessage, ...messages]);
+
+  
+      }
+    });
+    return () => subscription.unsubscribe();
+  }, []);
 
   return (
     <ImageBackground style={{ width: '100%', height: '100%' }} source={background}>

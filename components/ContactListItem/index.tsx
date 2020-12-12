@@ -35,7 +35,11 @@ const ContactListItem = (props: ChatListItemProps) => {
         item.chatRoom.chatRoomUsers.items.some(item => item.user.id === user.id)
       )[0];
 
-      return result;
+      if (result) {
+        return result.chatRoomId
+      } else {
+        return ''
+      }
     };
 
     try {
@@ -86,8 +90,6 @@ const ContactListItem = (props: ChatListItemProps) => {
       } else {
         console.log('chatroom found');
       }
-
-      console.log(user.imageUrl);
 
       navigation.navigate('ChatRoom', {
         chatRoomId: chatRoomId,

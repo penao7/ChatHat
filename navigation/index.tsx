@@ -69,7 +69,7 @@ function RootNavigator() {
               return (
                 <HeaderComponent
                   name={route.params.name}
-                  id={route.params.id}
+                  id={route.params.chatRoomId}
                   imageUrl={route.params.imageUrl}
                 />
               )

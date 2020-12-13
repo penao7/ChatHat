@@ -15,19 +15,11 @@ export type MainTabParamList = {
   Status: undefined;
 };
 
-export type TabOneParamList = {
-  TabOneScreen: undefined;
-};
-
-export type TabTwoParamList = {
-  TabTwoScreen: undefined;
-};
-
 export type User = {
   id: string;
-  name: string,
-  imageUrl?: string
-  status?: string
+  name: string;
+  imageUrl?: string;
+  status?: string;
 };
 
 export type Message = {
@@ -39,6 +31,9 @@ export type Message = {
 
 export type ChatRoom = {
   id: String;
-  users: User[];
-  lastMessage: Message;
+  users: User[]
+  lastMessage: Message
+  chatRoomUsers: {
+    items: []
+  }
 };

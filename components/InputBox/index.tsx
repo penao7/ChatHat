@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { View, TouchableOpacity } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
 import { createMessage, updateChatRoom } from '../../graphql/mutations';
+import { onCreateMessage } from '../../graphql/subscriptions';
 
 import styles from './styles';
 
@@ -17,18 +18,6 @@ const InputBox = (props: InputBoxProps) => {
 
   const [message, setMessage] = useState<string>('');
   const [userId, setUserId] = useState('');
-
-  useEffect(() => {
-    const fetchUser = async () => {
-      const userInfo = await Auth.currentAuthenticatedUser();
-      setUserId(userInfo.attributes.sub);
-    };
-    fetchUser();
-  }, []);
-
-  const onMicrophonePress = () => {
-    console.warn('microphone')
-  };
 
   const updateChatRoomLastMessage = async (messageId: string) => {
     try {
@@ -44,7 +33,18 @@ const InputBox = (props: InputBoxProps) => {
     } catch (err) {
       console.log(err);
     }
+  };
 
+  useEffect(() => {
+    const fetchUser = async () => {
+      const userInfo = await Auth.currentAuthenticatedUser();
+      setUserId(userInfo.attributes.sub);
+    };
+    fetchUser();
+  }, []);
+
+  const onMicrophonePress = () => {
+    console.warn('microphone');
   };
 
   const onSendPress = async () => {
@@ -63,8 +63,6 @@ const InputBox = (props: InputBoxProps) => {
         )
       );
 
-      console.log('inputbox', newMessage);
-
       await updateChatRoomLastMessage(newMessage.data.createMessage.id);
 
       setMessage('');
@@ -78,9 +76,9 @@ const InputBox = (props: InputBoxProps) => {
 
   const onPress = () => {
     if (!message) {
-      onMicrophonePress()
+      onMicrophonePress();
     } else {
-      onSendPress()
+      onSendPress();
     }
   };
 
@@ -118,7 +116,7 @@ const InputBox = (props: InputBoxProps) => {
         </View>
       </TouchableOpacity>
     </View>
-  )
+  );
 };
 
 export default InputBox;

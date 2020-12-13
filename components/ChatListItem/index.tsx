@@ -13,8 +13,6 @@ export type ChatListItem = {
 const ChatListItem = (props: ChatListItem) => {
   const { chatRoom } = props;
 
-  console.log(chatRoom);
-
   const [user, setUser] = useState({} as User);
 
   const users = chatRoom.chatRoomUsers.items;
@@ -22,7 +20,7 @@ const ChatListItem = (props: ChatListItem) => {
   useEffect(() => {
     const getOtherUser = async () => {
       const authenticatedUser = await Auth.currentAuthenticatedUser();
-      const user = users.filter(item => item.user.id !== authenticatedUser.attributes.sub)[0].user;
+      const user: User = users.filter(item => item.user.id !== authenticatedUser.attributes.sub)[0].user;
       setUser(user);
     };
 

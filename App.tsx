@@ -1,18 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useEffect } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import React, { useEffect } from 'react';
+import { AmplifyTheme } from 'aws-amplify-react-native';
 
 import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
 import Navigation from './navigation';
 
-import Amplify, { Auth, API, graphqlOperation } from 'aws-amplify'
-import config from './aws-exports'
+import Amplify, { Auth, API, graphqlOperation } from 'aws-amplify';
+import config from './aws-exports';
 
 import { getUser } from './graphql/queries';
 import { createUser } from './graphql/mutations';
 
 import { withAuthenticator } from 'aws-amplify-react-native';
+import Colors from './constants/Colors';
 
 
 Amplify.configure({
@@ -48,7 +50,7 @@ function App() {
       const userInfo = await Auth.currentAuthenticatedUser({ bypassCache: true });
 
       const getRandomImage = () => {
-        return randomImages[Math.floor(Math.random() * randomImages.length)]
+        return randomImages[Math.floor(Math.random() * randomImages.length)];
       };
 
       if (userInfo) {
@@ -59,7 +61,7 @@ function App() {
         if (userData.data.getUser) {
           console.log('User is already registered');
           return;
-        };
+        }
 
         const newUser = {
           id: userInfo.attributes.sub,
@@ -92,4 +94,10 @@ function App() {
   }
 }
 
-export default withAuthenticator(App);
+const Button = Object.assign({}, AmplifyTheme.button, { backgroundColor: Colors.light.tint });
+const ButtonDisabled = Object.assign({}, AmplifyTheme.button, { backgroundColor: 'lightgrey' });
+const FooterLinkColor = Object.assign({}, AmplifyTheme.sectionFooterLink, { color: Colors.light.tint });
+const MyTheme = Object.assign({}, AmplifyTheme, { button: Button, sectionFooterLink: FooterLinkColor, buttonDisabled: ButtonDisabled });
+
+
+export default withAuthenticator(App, false, [], null, MyTheme);

@@ -14,10 +14,10 @@ const HeaderComponent = (props: User) => {
       <HeaderAvatar imageUrl={imageUrl} />
       <View style={{ flexDirection: 'column' }}>
         <Text style={styles.headerUser}>{name}</Text>
-        <Text style={styles.time}>22 hours ago</Text>
+        {/* <Text style={styles.time}>22 hours ago</Text> */}
       </View>
     </View>
-  )
+  );
 };
 
 export default HeaderComponent;

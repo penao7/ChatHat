@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { FlatList, ImageBackground } from 'react-native';
+import { FlatList, ImageBackground, KeyboardAvoidingView } from 'react-native';
+import { LogBox } from 'react-native';
+
+// workaround for timer notification
+LogBox.ignoreLogs(['Setting a timer']);
 
 import { RouteProp, useRoute } from '@react-navigation/native';
 import ChatMessage from '../components/ChatMessage';
@@ -35,7 +39,7 @@ const ChatRoomScreen = () => {
         sortDirection: "DESC"
       }
       )
-    ) as GetMessagesQuery;
+    ) as GetMessagesQuery
     setMessages(messageData.data.messagesByChatRoom.items);
   };
 
@@ -59,17 +63,13 @@ const ChatRoomScreen = () => {
         onCreateMessage
       )
     ).subscribe({
-      next: (data) => {
+      next: (data: any) => {
 
-        if(!data) {
+        if (!data) {
           console.log('invalid data');
         }
 
-        console.log('data', data.value.data);
-
         const newMessage = data.value.data.onCreateMessage;
-
-        console.log('newMessage', newMessage);
 
         if (newMessage.chatRoomId !== route.params.chatRoomId) {
           console.log('another room');
@@ -77,26 +77,23 @@ const ChatRoomScreen = () => {
         }
 
         fetchMessages();
-
-        setMessages([newMessage, ...messages]);
-
-  
       }
     });
     return () => subscription.unsubscribe();
   }, []);
 
   return (
-    <ImageBackground style={{ width: '100%', height: '100%' }} source={background}>
-      <FlatList
-        data={messages}
-        renderItem={({ item }) => <ChatMessage message={item} myId={myId} />}
-        keyExtractor={item => item.id}
-        inverted
-      />
-      <InputBox chatRoomId={route.params.chatRoomId} />
-    </ImageBackground>
-
+    <KeyboardAvoidingView>
+      <ImageBackground style={{ width: '100%', height: '100%' }} source={background}>
+        <FlatList
+          data={messages}
+          renderItem={({ item }) => <ChatMessage message={item} myId={myId} />}
+          keyExtractor={item => item.id}
+          inverted
+        />
+        <InputBox chatRoomId={route.params.chatRoomId} />
+      </ImageBackground>
+    </KeyboardAvoidingView>
   )
 };
 

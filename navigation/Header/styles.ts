@@ -14,6 +14,6 @@ const styles = StyleSheet.create({
   time: {
 
   }
-})
+});
 
 export default styles;

@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, Text, Image, TouchableWithoutFeedback } from 'react-native';
 import { User } from '../../types';
 import styles from './style';
-import moment from 'moment';
 import { useNavigation } from '@react-navigation/native';
 import { API, graphqlOperation, Auth } from 'aws-amplify';
 import { createChatRoom, createChatRoomUser } from '../../graphql/mutations';
@@ -36,9 +35,9 @@ const ContactListItem = (props: ChatListItemProps) => {
       )[0];
 
       if (result) {
-        return result.chatRoomId
+        return result.chatRoomId;
       } else {
-        return ''
+        return '';
       }
     };
 
@@ -95,11 +94,11 @@ const ContactListItem = (props: ChatListItemProps) => {
         chatRoomId: chatRoomId,
         imageUrl: user.imageUrl,
         name: user.name,
-      })
+      });
 
     } catch (err) {
       console.log('catched error', err);
-    };
+    }
   };
 
   return (
@@ -114,7 +113,7 @@ const ContactListItem = (props: ChatListItemProps) => {
         </View>
       </View >
     </TouchableWithoutFeedback>
-  )
+  );
 };
 
 export default ContactListItem;

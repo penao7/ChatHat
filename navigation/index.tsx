@@ -1,10 +1,10 @@
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
-import { createStackNavigator, HeaderBackButton } from '@react-navigation/stack';
+import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
-import { ColorSchemeName, StyleSheet, Image, Text } from 'react-native';
+import { ColorSchemeName, StyleSheet } from 'react-native';
 import { View } from 'react-native';
 import Colors from '../constants/Colors';
-import { Octicons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import NotFoundScreen from '../screens/NotFoundScreen';
 import { RootStackParamList } from '../types';
@@ -13,6 +13,9 @@ import LinkingConfiguration from './LinkingConfiguration';
 import ChatRoomScreen from '../screens/ChatRoomScreen';
 import HeaderComponent from './Header';
 import ContactsScreen from '../screens/ContactsScreen';
+
+import { Auth } from 'aws-amplify';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 // If you are not familiar with React Navigation, we recommend going through the
 // "Fundamentals" guide: https://reactnavigation.org/docs/getting-started
@@ -31,6 +34,14 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
 const Stack = createStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
+
+  const signOut = async () => {
+    try {
+      await Auth.signOut();
+    } catch (err) {
+      console.log('error signing out', err);
+    }
+  };
 
   return (
     <Stack.Navigator
@@ -54,8 +65,9 @@ function RootNavigator() {
           title: 'ChatHat',
           headerRight: () => (
             <View style={styles.headerRightStyle}>
-              <Octicons name="search" size={24} color='black' />
-              <MaterialCommunityIcons name="dots-vertical" size={24} />
+              <TouchableOpacity onPress={() => signOut()}>
+                <MaterialCommunityIcons name="logout" size={30} />
+              </TouchableOpacity>
             </View>
           )
         }}
@@ -72,7 +84,7 @@ function RootNavigator() {
                   id={route.params.chatRoomId}
                   imageUrl={route.params.imageUrl}
                 />
-              )
+              );
             },
           headerTitleAlign: 'left',
           headerTitleContainerStyle: {
@@ -89,8 +101,8 @@ function RootNavigator() {
 const styles = StyleSheet.create({
   headerRightStyle: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-end',
     width: 60,
     marginRight: 10
   },
-})
+});

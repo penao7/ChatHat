@@ -48,4 +48,4 @@ export default [{
   name: 'Angelina Jolie',
   imageUri: 'https://lkbkspro.s3.amazonaws.com/atelier-management/gs_58d933b8-98b4-468e-b229-43100a9620a7.jpg',
   status: "Hello there, how are you"
-}]
+}];

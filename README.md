@@ -1,5 +1,5 @@
 # ChatHat
-Whatsapp inspired, real time mobile chat app
+Whatsapp inspired, real time Mobile Chat App.
 
 This App is created using Expo, React-Native, AWS Amplify and GraphQL.
 

@@ -36,7 +36,7 @@ $ amplify push
 ```
 More information can be found from AWS Amplify official [documentation](https://gist.github.com/dabit3/51d5eef5a01f1c47e645c17b1af430f4).
 
-## Features
+## Current features
 
 User can sign up and sign in, find all authenticated users from the contact list and start conversations which will appear real time in their chatlist.
 
